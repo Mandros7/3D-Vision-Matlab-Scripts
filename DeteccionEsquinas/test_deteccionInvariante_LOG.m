@@ -1,5 +1,5 @@
-alpha = 0.04            %Valor entre 0.04 y 0.06
-threshold = 5000;     %Limite para el valor de R
+alpha = 0.06            %Valor entre 0.04 y 0.06
+threshold = 90000;     %Limite para el valor de R
 sigma = sqrt(2);              %Ventana gaussiana
 semiancho = sigma * 3;    %Ancho correspondiente a un 99,9% del area
 resolutionLevels = 5;

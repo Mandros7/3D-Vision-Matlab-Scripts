@@ -1,6 +1,6 @@
 alpha = 0.04            %Valor entre 0.04 y 0.06
 threshold = 1000;     %Limite para el valor de R
-sigma = 1;              %Ventana gaussiana
+sigma = 2;              %Ventana gaussiana
 semiancho = sigma * 3;    %Ancho correspondiente a un 99,9% del area
 
 I = imread('img_test.jpeg');

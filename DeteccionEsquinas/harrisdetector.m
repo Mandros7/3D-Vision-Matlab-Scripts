@@ -7,14 +7,10 @@ function [ output] = harrisdetector(alpha,sigma,semiancho,I)
 [Idx, Idy] = gradient(double(I));
 G = fspecial('gaussian', semiancho*2, sigma); 
 
-%Convolucion de derivadas en cada pixel en x e y
-Ix = conv2(Idx, G,'same');
-Iy = conv2(Idy, G,'same');
-
 %Productos de las derivadas
-Ix2 = Ix .^ 2;
-Iy2 = Iy .^ 2;
-Ixy = Ix .* Iy;
+Ix2 = Idx .^ 2;
+Iy2 = Idy .^ 2;
+Ixy = Idx .* Idy;
 
 % Sumatorio de los productos de las derivadas en cada pixel
 Sx2 = conv2(Ix2, G,'same');
