@@ -1,4 +1,4 @@
-function [ output] = harrisdetector(I,alpha,sigma)
+function [output,Idx,Idy] = harrisdetector(I,alpha,sigma)
 %La derivada de la convolucion 2D de los puntos con una gaussiana 
 % es lo mismo que la convolucion con la derivada de la gaussiana
 % uso de la funcion conv2
@@ -16,8 +16,8 @@ if ~isa(I,'double')
     I=double(I);
 end
 
-Idx = imfilter(I,S);
-Idy = imfilter(I,S');
+Idx = imfilter(I,S');
+Idy = imfilter(I,S);
 %Productos de las derivadas
 Ix2 = Idx .^ 2;
 Iy2 = Idy .^ 2;
