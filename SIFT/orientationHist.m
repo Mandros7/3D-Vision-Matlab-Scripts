@@ -1,15 +1,13 @@
 function [thresh,ortHist] = orientationHist(grad, ort, x, y, ancho,num_bins)
 
 	[M,N] = size(grad);
-
-    ancho = 9;
+    
 	ortHist = zeros(num_bins, 1);
 
     
     vx = x-floor(ancho/2):x+floor(ancho/2);
     vy = y-floor(ancho/2):y+floor(ancho/2);
 
-	% iterate through all points in the window
 	for i = vx
 		for j = vy
 			gradVal = grad(i, j);
@@ -24,11 +22,6 @@ function [thresh,ortHist] = orientationHist(grad, ort, x, y, ancho,num_bins)
 		end
 	end
 
-	% smooth the histogram
-	%ortHist = smoothHist(ortHist);
-
-	% the threshold for creating a keypoint is 80% of the 
-	% highest peak in the histogram
 	thresh = 0.8 * max(ortHist);
 
 end
